@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "description": "Receives and parses Apple Shortcuts JSON results sent over WebSocket by the Apple Shortcuts module",
   "url": "https://github.com/UUoocl/Shortcuts-Response-Chataigne-Module",
+  "downloadURL": "https://github.com/UUoocl/Shortcuts-Response-Chataigne-Module/archive/main.zip",
   "hasInput": true,
   "hasOutput": false,
   "hideDefaultCommands": true,
