@@ -1,0 +1,73 @@
+{
+  "name": "Apple Shortcuts Response",
+  "type": "WebSocket Server",
+  "path": "System",
+  "version": "1.0.0",
+  "description": "Receives and parses Apple Shortcuts JSON results sent over WebSocket by the Apple Shortcuts module",
+  "url": "https://github.com/UUoocl/Shortcuts-Response-Chataigne-Module",
+  "hasInput": true,
+  "hasOutput": false,
+  "hideDefaultCommands": true,
+  "defaults": {
+    "protocol": "JSON",
+    "localPort": 8080,
+    "autoAdd": true
+  },
+  "hideDefaultParameters": [
+    "useSecureConnection",
+    "protocol",
+    "autoAdd",
+    "messageStructure",
+    "customSeparator",
+    "firstValueIsTheName",
+    "passThrough"
+  ],
+  "parameters": {},
+  "values": {
+    "ok": {
+      "type": "Boolean",
+      "default": false,
+      "readOnly": true,
+      "description": "Whether the last Apple Shortcuts action succeeded"
+    },
+    "action": {
+      "type": "String",
+      "default": "",
+      "readOnly": true,
+      "description": "Last Apple Shortcuts action executed (run, list)"
+    },
+    "shortcut": {
+      "type": "String",
+      "default": "",
+      "readOnly": true,
+      "description": "Name of the shortcut executed by the last run action"
+    },
+    "output": {
+      "type": "String",
+      "default": "",
+      "readOnly": true,
+      "description": "Plain-text output returned by the last run shortcut"
+    },
+    "count": {
+      "type": "Integer",
+      "default": 0,
+      "min": 0,
+      "readOnly": true,
+      "description": "Number of shortcuts returned by the last list action"
+    },
+    "error": {
+      "type": "String",
+      "default": "",
+      "readOnly": true,
+      "description": "Error message if the last Apple Shortcuts action failed"
+    },
+    "responseReceived": {
+      "type": "Trigger",
+      "readOnly": true,
+      "description": "Triggered whenever a WebSocket response arrives from Apple Shortcuts"
+    }
+  },
+  "scripts": [
+    "shortcutsResponse.js"
+  ]
+}
